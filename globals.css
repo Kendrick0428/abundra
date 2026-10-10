@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #2F5D46;
+}
+
+body {
+  @apply bg-dew text-ink font-sans antialiased;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-vine disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    background-color: var(--brand);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    filter: brightness(0.92);
+  }
+  .btn-quiet {
+    @apply border border-line bg-white text-ink hover:bg-dew;
+  }
+  .field {
+    @apply block w-full rounded-md border border-line bg-white px-3 py-2 text-sm placeholder:text-stone focus:border-vine focus:outline-none focus:ring-1 focus:ring-vine;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-ink;
+  }
+  .panel {
+    @apply rounded-lg border border-line bg-white;
+  }
+  .page-title {
+    @apply font-serif text-3xl font-semibold tracking-tight text-ink;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
